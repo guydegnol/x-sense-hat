@@ -330,9 +330,10 @@ class RGB_Matrix():
     def draw_rectangle(self,coor_1,coor_2,fill=None,outline=False, width=0):
         coor = [coor_1[0],coor_1[1],coor_2[0],coor_2[1]]
         if outline == True:
-             self.draw.rectangle(coor,fill=None,outline=fill, width=0)
+             self.draw.rectangle(coor,fill=None,outline=fill, width=1)
         else:
             self.draw.rectangle(coor,fill=fill,outline=None, width=0)
+            # self.draw.rectangle(coor,outline=fill, width=)
         # img = list(self.new_image.getdata())
         # self.image(img)
 
@@ -404,8 +405,8 @@ if __name__=='__main__':
     i = 0
     # rr.show_text("7")
     # time.sleep(1)
-    rectangle_coor_1 = [0,0,7,7]
-    rectangle_coor_2 = [2,2,5,5]
+    rectangle_coor_1 = [0,0]
+    rectangle_coor_2 = [7,7]
     rectangle_coor_3 = [4,4]
     # rr.draw_rectangle(rectangle_coor,fill=(255,255,255),outline=None, width=0)   #draw a rectangle
     # rr.draw_rectangle(rectangle_coor,fill=(51,51,0),outline=None, width=0)   #draw a rectangle
@@ -432,7 +433,7 @@ if __name__=='__main__':
         print(rr.create_coor(1,2))
         # pass
         # if x_cood < 7
-        # rr.draw_rectangle(rectangle_coor_1,fill=(0,255,0),outline=True, width=0)   #draw a rectangle
+        rr.draw_rectangle(rectangle_coor_1,rectangle_coor_2,fill=(0,255,0),outline=False, width=0)   #draw a rectangle
         # rr.draw_rectangle(rectangle_coor_2,fill=(255,0,0),outline=False, width=0)   #draw a rectangle
         # rr.draw_ellipse(rectangle_coor_3,3,fill=(0,0,255),outline=True, width=0)
        
@@ -456,5 +457,5 @@ if __name__=='__main__':
         #     # print(coor_list)
         #     rr.draw_point(list(coor_list[i]),fill=(0,0,int(240/(i+1))))
 
-        # rr.display()
+        rr.display()
         time.sleep(1/56.0)

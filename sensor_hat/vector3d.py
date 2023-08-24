@@ -70,8 +70,6 @@ class Vector3d(object):
         
 
 
-
-
     def new_list(self, default_value):
         _ = [0 for i in range(3)]
         return _

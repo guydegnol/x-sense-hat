@@ -247,7 +247,7 @@ def install():
     # do(msg="add excutable mode for sensor_hat-web-example",
     #     cmd='run_command("sudo chmod +x /etc/init.d/sensor_hat-web-example")')
 
-# install()
+install()
 from setuptools import setup, find_packages
 
 setup(

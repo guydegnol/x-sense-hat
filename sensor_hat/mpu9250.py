@@ -375,8 +375,9 @@ class MPU9250(MPU6050):
             gyro_minvec = list(map(min, gyro_minvec, self.gyro._vector))
         self.accel.cal = tuple(map(lambda a, b: (a + b)/2, accel_maxvec, accel_minvec))
         self.gyro.cal = tuple(map(lambda a, b: (a + b)/2, gyro_maxvec, gyro_minvec))
+        print("self.accel.cal and self.gyro.cal:",self.accel.cal,self.gyro.cal)
         self.accel.set_offset(self.accel.cal)
-        self.accel.set_offset(self.gyro.cal)
+        self.gyro.set_offset(self.gyro.cal)
 
     # def calibrate_accel_gyro(self):
     #     self.
